@@ -6,7 +6,7 @@ ctransformers==0.2.26
 huggingface-hub
 langchain==0.0.329
 sentence-transformers
-torch==2.0.1
+torch==2.2.1
 transformers
 chainlit==1.0.0
 streamlit==1.30.0

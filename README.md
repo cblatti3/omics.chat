@@ -1,7 +1,7 @@
 We are here creating a medical chatbot that assists with research in genetics.
 
 ##### The source code has been taken from this git repo:
-[text](https://github.com/ThisIs-Developer/Llama-2-GGML-Medical-Chatbot)
+[Link to source repository](https://github.com/ThisIs-Developer/Llama-2-GGML-Medical-Chatbot)
 
 #### Changes Introduced:
 1. Rather than referencing to medical encyclopedia the code now uses gnomad help articles to answer question.

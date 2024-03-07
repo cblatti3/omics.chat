@@ -8,5 +8,5 @@ langchain==0.0.329
 sentence-transformers
 torch==2.0.1
 transformers
-chainlit==1.0.0
+chainlit==1.0.400
 streamlit==1.30.0

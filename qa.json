@@ -1,0 +1,1804 @@
+[
+    {
+        "question": "What's the difference between the different versions of gnomAD?",
+        "serial": 1,
+        "answer": "The gnomAD v4.0 data set contains 730,947 exomes plus the 76,215 genomes previously called gnomAD v3.1, all mapped to the GRCh38/hg38 reference sequence.The gnomAD v2.1 data set contained data from 125,748 exomes and 15,708 whole genomes, all mapped to the GRCh37/hg19 reference sequence. Most of the data from v2 are included in v4.0."
+    },
+    {
+        "question": "What features are not yet in v4 and where can I find them?",
+        "serial": 2,
+        "answer": "The v4.0 release is a minimum viable product (MVP) release, which allows us to get the most critical piece of the gnomAD database, high quality aggregate allele frequencies, to our users as soon as possible. It also means that a few of the existing features found in v2 or v3 are not yet included in v4 butwill be coming soon.Below is a list of all features not included in the v4 MVP and where to find them in our past datasets until we are able to add them to v4:",
+        "Table": [
+            [
+                "Non MVP feature",
+                "Past versions with this data"
+            ],
+            [
+                "Pext score",
+                "v2 gene page"
+            ],
+            [
+                "Genetic ancestry subgroups (prevously subpops)",
+                "v2 variant page"
+            ],
+            [
+                "Multi Nucleotide (MNV) calls",
+                "v2 variant table and variant page"
+            ],
+            [
+                "Variant co-occurrence",
+                "v2 gene page"
+            ],
+            [
+                "Manual LoF curation",
+                "v2 variant table and variant page"
+            ],
+            [
+                "Regional Missense Constraint",
+                "Now available on v2 gene page"
+            ],
+            [
+                "Linkage disequilibrium scores",
+                "v2downloads"
+            ]
+        ]
+    },
+    {
+        "question": "What are the restrictions on data usage?",
+        "serial": 3,
+        "answer": "Please see our terms of use and other policies on ourpolicy page."
+    },
+    {
+        "question": "I have identified a rare variant in gnomAD that I believe is associated with a specific clinical phenotype. What phenotype data are available for these individuals?",
+        "serial": 4,
+        "answer": "The gnomAD resource does not currently have permission, access, or staffing to investigate the availability of phenotype data for individual samples nor the consent status to share that data. As such, at this time we are typically unable to provide any information about the clinical status of a sample in gnomAD. We have made every effort to exclude individuals with severe pediatric diseases from the gnomAD data set, and certainly do not expect our data set to beenrichedfor such individuals, but we typically cannot rule out the possibility that a given participant has a disease of interest."
+    },
+    {
+        "question": "Can I get access to individual-level genotype data from gnomAD?",
+        "serial": 5,
+        "answer": "The gnomAD project is not allowed to provide any individual-level data under any circumstances. However, many of the samples in gnomAD have individual-level sequencing data deposited indbGaPor the UKBB for which access can be requested. In addition, a fully genotypedcallsetfrom the Human Genome Diversity Project and 1000 Genomes Project is available. However, many other samples come from unpublished cohorts or from samples not in dbGaP. No mechanisms currently exist to systematically obtain individual-level genotype data from the database as a whole."
+    },
+    {
+        "question": "Can I contribute data to gnomAD?",
+        "serial": 6,
+        "answer": "Pleasecontact usif you are a study investigator and are interested in contributing exome or genome sequencing data to the gnomAD resource. We are particularly interested in increasing the diversity included in gnomAD to improve the resource. We have limited funding for data reprocessing of externally sequenced samples for use in gnomAD and therefore we prioritize reprocessing of datasets composed of individuals from historically underrepresented populations and other populations not well-represented in gnomAD (e.g. Middle East).Please be aware that there are a number of challenges associated with incorporating external datasets into gnomAD. To produce the high quality, unified gnomAD dataset, we are unable to directly add externally generated VCFs to the gnomAD dataset and need to process all CRAM/BAM files in a uniform manner at the Broad Institute. This requires data reprocessing, including regulatory review, transfer of raw data to the Broad Institute, remapping of raw data, generation of a VCF and providing requested metadata (i.e. sex, age, race/ethnicity/ancestry).Please also note that given the importance of gnomAD to the clinical genetics community to diagnose patients with monogenic disease, we do not include cohorts recruited for severe pediatric disease or their first-degree relatives, allowing the database to largely represent the general population.Soon, we will begin to explore working with other sites to create a federated gnomAD. This would include a small number of sites outside the US that are willing to contribute data but are not allowed to send the raw data to the Broad Institute. In this case, if the site has an experienced computational team able to work alongside the gnomAD technical team, we would guide the sites to follow gnomAD pipelines and best practices to generate aggregate data that can then be shared with the gnomAD team for incorporation into a federated gnomAD. Please contact us if this option is of interest as we explore the feasibility of this approach.All investigators who contribute data to gnomAD join the gnomAD Consortium. See ourMemorandum of Understandingfor more details on Consortium membership."
+    },
+    {
+        "question": "Why is a particular variant found in some versions of gnomAD but not others?",
+        "serial": 7,
+        "answer": "Likely because of differences between the projects in sample inclusion and variant quality control.Sample QC: Not all data from previous call sets are included in each gnomAD release. Most of the samples from prior releases are included during the initial joint calling; however, we make changes to our sample QC process in each release, which always results in the removal of some samples that previously passed QC. For instance, some of the samples in gnomAD v2 were not included in v4, due to data quality issues so we expect some variants in v2 particularly those that were found at low frequencies, to be absent in gnomAD v4.Variant QC: Some variants present in previous releases may now be filtered because we used new filtering strategies: we also continuously work on improving our filtering strategy, which could result in a variant being included in one version but not another. We update our variant QC processes with each release. This means that a variant that was in a previous release could be filtered in our current release. For example, in gnomAD v4, we used a combination of hard filters and an allele-specific version of GATK's Variant Quality Score Recalibration (VQSR) to filter variants rather than the random forest classifier used in v2."
+    },
+    {
+        "question": "Where can I find more details on the QC pipeline?",
+        "serial": 8,
+        "answer": "More details on our QC process can be found in our blog posts:"
+    },
+    {
+        "question": "Should I switch to the latest version of gnomAD?",
+        "serial": 14,
+        "answer": "With 730,947 exomes and 76,215 genomes, the gnomAD v4.0 call set is the largest of all the gnomAD versions. It also contains nearly all data from prior versions (v2 and v3) except a small number of samples excluded due to data quality and updated sample filtering pipelines. Since gnomAD v4.0 is mapped to GRCh38, if you haven’t switched to GRCh38, now is the time!"
+    },
+    {
+        "question": "How do I evaluate variants in a gene that has a pseudogene? Were any steps taken to distinguish the gene from the pseudogene?",
+        "serial": 15,
+        "answer": "Short read sequencing can produce mapping issues when a gene has a highly homologous pseudogene. Many variants in such genes (e.g.PRSS1) will be filtered due to low mapping quality or deviation from Hardy-Weinberg equilibrium; the remaining variants should be interpreted with caution. The gnomAD pipeline does not apply any special filters to regions with a highly similar pseudogene."
+    },
+    {
+        "question": "How do you pronounce gnomAD?",
+        "serial": 16,
+        "answer": "ˈnōˌmad"
+    },
+    {
+        "question": "How was the expected number of variants determined?",
+        "serial": 17,
+        "answer": "We used a mutational model that accounts for local sequence context, CpG methylation, and sequencing depth to predict the number of expected single nucleotide variants per functional class per gene. More details can be found in the help section ongene constraintand inKarczewskiet al.Nature 2020. Note that the expected variant counts for bases with a median depth <1 were removed from the totals. In v4, we applied our mutational model only to sites with a median depth in the exomes ≥30."
+    },
+    {
+        "question": "Which variants are included in the observed counts?",
+        "serial": 18,
+        "answer": "Please review ourgene constrainthelp text to learn more about how we decided which variants to include in our observed counts."
+    },
+    {
+        "question": "Why are there fewer variants in the constraint table than displayed on the gene page?",
+        "serial": 19,
+        "answer": "We only included single nucleotide variants that were found in the MANE Select (v3 and v4 on GRCh38) or canonical (ExAC and v2 on GRCh37/hg19) transcript of the gene. On the gene page, variants found in all transcripts are displayed. Additionally, both observed and expected variant counts were removed for sites with a median depth < 30."
+    },
+    {
+        "question": "What is included in pLoF?",
+        "serial": 20,
+        "answer": "Nonsense, splice acceptor, and splice donor variants caused by single nucleotide changes."
+    },
+    {
+        "question": "Why are constraint metrics missing for this gene or annotated with a note?",
+        "serial": 21,
+        "answer": "Genes that were outliers in certain assessments will not have constraint metrics or will be flagged with a note warning of various error modes. Please note that these assessments were applied to the MANE select or canonical transcripts of the genes. If a gene was not annotated as a protein-coding gene in GENCODE v39, we did not calculate constraint. The following list describes the reason names given in the constraint_flag column of theconstraint files:Possible reasons that one might observe the deviations listed above include mismapped reads due to homologous regions or poor quality sequencing data.In addition, there are 19 MANE select transcripts that are missing constraint scores due to a known issue. Scores for these transcripts will be released in the near future."
+    },
+    {
+        "question": "What is a LOEUF score?",
+        "serial": 29,
+        "answer": "For the definition of the LOEUF score and appropriate uses see ourconstraint section.LOEUF stands for the \"loss-of-function observed/expected upper bound fraction.\" It is a conservative estimate of the observed/expected ratio, based on the upper bound of a Poisson-derived confidence interval around the ratio. Low LOEUF scores indicate strong selection against predicted loss-of-function (pLoF) variation in a given gene, while high LOEUF scores suggest a relatively higher tolerance to inactivation. Its advantage over pLI is that it can be used as a continuous value rather than a dichotomous scale (e.g. pLI > 0.9) - if such a single cutoff is still desired, pLI is a perfectly fine metric to use. At large sample sizes, the observed/expected ratio will be a more appropriate measure for selection, but at the moment, LOEUF provides a good compromise of point estimate and significance measure."
+    },
+    {
+        "question": "How do you pronounce LOEUF?",
+        "serial": 30,
+        "answer": "LOEUF is pronounced like its French-inspired name \"l'œuf\". Another accepted pronunciation is \"luff\"."
+    },
+    {
+        "question": "What are the fields included in constraint files?",
+        "serial": 31,
+        "answer": "Descriptions of the fields in these files can be found in theREADME filesupplied with the download."
+    },
+    {
+        "question": "What genome build is the gnomAD data based on?",
+        "serial": 32,
+        "answer": "gnomAD v4 and v3 are based on GRCh38, and gnomAD v2 and ExAC files are based onGRCh37/hg19."
+    },
+    {
+        "question": "What version of GENCODE was used to annotate variants?",
+        "serial": 33,
+        "answer": "We use VEP to annotate variants on GENCODE transcripts. For details on the version used in v4.0, and past gnomAD versions, please seeVEP annotations."
+    },
+    {
+        "question": "Are all the individuals in 1000 Genomes included?",
+        "serial": 34,
+        "answer": "The majority of samples from the 1000 Genomes Project for which exome sequencing is available were included in v4.0. Whole genome sequencing from 3,202 subjects from the 1000 Genomes Project was included in gnomAD v3.1, and which are now in v4.0 genomes, though some were filtered out by our QC pipeline. Afully genotyped callsetcontaining individual genotypes for these data is available."
+    },
+    {
+        "question": "Are all the individuals in the Exome Variant Server included?",
+        "serial": 35,
+        "answer": "No. We were not given permission from NHLBI to include individuals from several of the cohorts included in the NHLBI's Exome Sequencing Project. As a result, genuine rare variants that are present in theExome Variant Servermay not be observed in gnomAD."
+    },
+    {
+        "question": "Do the cancer samples in the database include tumor exomes, or is this from germline samples only?",
+        "serial": 36,
+        "answer": "Version 4.0 of gnomAD does not contain samples that were specifically recruited for cancer. Although v2 included TCGA samples, these were removed from v4 during sample QC due to data quality issues. It should be noted that we do not collect detailed phenotypes for all individuals and thus do not know if any individuals in gnomAD have a personal or family history of cancer.\nAll of the \"cancer\" samples in ExAC and v2 are blood (\"germline\") samples from TCGA. We excluded any sample labeled as tumor. In addition, it is possible that in some patients the blood samples are contaminated by circulating tumor cells."
+    },
+    {
+        "question": "How is ancestry determined for gnomAD samples?",
+        "serial": 37,
+        "answer": "Seeancestry documentationandblog post."
+    },
+    {
+        "question": "What genetic ancestry groups are represented in the gnomAD data?",
+        "serial": 38,
+        "answer": "gnomAD v4For current stats on genetic ancestry groups present in v4, please see thestats page. For technical details, please see ourGenetic Ancestry in gnomADhelp text.gnomAD v3gnomAD v2* For v2 genomes, we have a total of only 31 South Asian samples so they are grouped with Remaining individuals.",
+        "Table": [
+            [
+                "Genetic ancestry group",
+                "overall",
+                "controls/biobanks",
+                "non-cancer",
+                "non-neuro",
+                "non-TOPMed",
+                "non-v2"
+            ],
+            [
+                "African/African American",
+                "20,744",
+                "4,554",
+                "20,583",
+                "16,253",
+                "12,431",
+                "14,377"
+            ],
+            [
+                "Amish",
+                "456",
+                "30",
+                "456",
+                "431",
+                "56",
+                "455"
+            ],
+            [
+                "Admixed American",
+                "7,647",
+                "2,345",
+                "7,553",
+                "7,424",
+                "6,460",
+                "6,878"
+            ],
+            [
+                "Ashkenazi Jewish",
+                "1,736",
+                "68",
+                "1,651",
+                "1,694",
+                "499",
+                "1,538"
+            ],
+            [
+                "East Asian",
+                "2,604",
+                "1,215",
+                "2,486",
+                "2,604",
+                "1,883",
+                "1,414"
+            ],
+            [
+                "European (Finnish)",
+                "5,316",
+                "2,750",
+                "5,316",
+                "3,495",
+                "5,270",
+                "3,662"
+            ],
+            [
+                "Middle Eastern",
+                "158",
+                "123",
+                "152",
+                "155",
+                "136",
+                "154"
+            ],
+            [
+                "European (non-Finnish)",
+                "34,029",
+                "3,427",
+                "32,411",
+                "31,966",
+                "10,533",
+                "25,988"
+            ],
+            [
+                "South Asian",
+                "2,419",
+                "1,558",
+                "2,403",
+                "2,418",
+                "2,405",
+                "1,946"
+            ],
+            [
+                "Remaining individuals",
+                "1,047",
+                "395",
+                "1,012",
+                "1,002",
+                "760",
+                "932"
+            ],
+            [
+                "XX",
+                "38,947",
+                "6,717",
+                "38,060",
+                "35,271",
+                "16,438",
+                "30,110"
+            ],
+            [
+                "XY",
+                "37,209",
+                "9,748",
+                "35,963",
+                "32,171",
+                "23,995",
+                "27,234"
+            ],
+            [
+                "Total",
+                "76,156",
+                "16,465",
+                "74,023",
+                "67,442",
+                "40,433",
+                "57,344"
+            ],
+            [
+                "Genetic ancestry group",
+                "overall",
+                "controls",
+                "non-cancer",
+                "non-neuro",
+                "non-TOPMed"
+            ],
+            [
+                "exomes",
+                "genomes",
+                "exomes",
+                "genomes",
+                "exomes",
+                "genomes",
+                "exomes",
+                "genomes",
+                "exomes",
+                "genomes"
+            ],
+            [
+                "African/African American",
+                "8,128",
+                "4,359",
+                "3,582",
+                "1,287",
+                "7,451",
+                "4,359",
+                "8,109",
+                "1,694",
+                "6,013",
+                "4,278"
+            ],
+            [
+                "Amish",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ],
+            [
+                "Admixed American",
+                "17,296",
+                "424",
+                "8,556",
+                "123",
+                "17,130",
+                "424",
+                "15,262",
+                "277",
+                "17,229",
+                "405"
+            ],
+            [
+                "Ashkenazi Jewish",
+                "5,040",
+                "145",
+                "1,160",
+                "19",
+                "4,786",
+                "145",
+                "3,106",
+                "123",
+                "4,999",
+                "69"
+            ],
+            [
+                "East Asian",
+                "9,197",
+                "780",
+                "4,523",
+                "458",
+                "8,846",
+                "780",
+                "6,708",
+                "780",
+                "9,195",
+                "761"
+            ],
+            [
+                "European (Finnish)",
+                "10,824",
+                "1,738",
+                "6,697",
+                "581",
+                "10,816",
+                "1,738",
+                "8,367",
+                "582",
+                "10,823",
+                "1,738"
+            ],
+            [
+                "European (non-Finnish)",
+                "56,885",
+                "7,718",
+                "21,384",
+                "2,762",
+                "51,377",
+                "7,718",
+                "44,779",
+                "6,813",
+                "55,840",
+                "5,547"
+            ],
+            [
+                "South Asian",
+                "15,308",
+                "*",
+                "7,845",
+                "*",
+                "15,263",
+                "*",
+                "15,304",
+                "*",
+                "15,308",
+                "*"
+            ],
+            [
+                "Remaining individuals",
+                "3,070",
+                "544",
+                "957",
+                "212",
+                "2,810",
+                "544",
+                "2,433",
+                "367",
+                "3,032",
+                "506"
+            ],
+            [
+                "XX",
+                "57,787",
+                "6,967",
+                "25,645",
+                "2,508",
+                "53,850",
+                "6,967",
+                "47,831",
+                "4,799",
+                "55,662",
+                "6,299"
+            ],
+            [
+                "XY",
+                "67,961",
+                "8,741",
+                "29,059",
+                "2,934",
+                "64,629",
+                "8,741",
+                "56,237",
+                "5,837",
+                "66,777",
+                "7,005"
+            ],
+            [
+                "Total",
+                "125,748",
+                "15,708",
+                "54,704",
+                "5,442",
+                "118,479",
+                "15,708",
+                "104,068",
+                "10,636",
+                "122,439",
+                "13,304"
+            ]
+        ]
+    },
+    {
+        "question": "What genetic ancestry groups are represented in the \"remaining individuals\" category?",
+        "serial": 39,
+        "answer": "Individuals were classified as \"remaining individuals\" if they did not unambiguously cluster with the major populations (i.e.afr,ami,amr,asj,eas,fin,mid,nfe,sas) in a principal component analysis (PCA)."
+    },
+    {
+        "question": "How are genetic ancestry group names abbreviated?",
+        "serial": 40,
+        "answer": "Genetic ancestry group names in the VCF and Hail Table are abbreviated to 3 letter IDs:Genetic ancestry group names in the VCF and Hail Table are abbreviated to 3 letter IDs:"
+    },
+    {
+        "question": "What is the age distribution in gnomAD?",
+        "serial": 70,
+        "answer": "For gnomAD v4, the age distribution is:ExomesGenomesPlease note that cohorts vary in how they report age (some report the age at diagnosis, others report the age of last visit, etc), so the ages associated with the gnomAD data can be thought of as the last known age of the individual. Information on age was not available for all samples. We have age data for 477,065 exome samples and 31,168 genome samples.For gnomAD v3, the age distribution is:For gnomAD v2, the age distribution is:ExomesGenomesPlease note that cohorts vary in how they report age (some report the age at diagnosis, others report the age of last visit, etc), so the ages associated with the gnomAD data can be thought of as the last known age of the individual. Information on age was not available for all samples. We have age data for 85,462 exome samples and 11,242 genome samples."
+    },
+    {
+        "question": "How is sex determined for gnomAD samples?",
+        "serial": 71,
+        "answer": "We used normalized coverage across the X and Y chromosomes to assign sex for each gnomAD sample.The normalized coverage was computed as the mean coverage on sex chromosomes / mean coverage on chromosome 20. The metrics and thresholds used for sex assignment were as follows:ExomesDue to the heterogeneity of the v4 exome data, we calculated sex cutoffs for each exome capture platform separately. You can access the sex inference files on ourdownloads page.GenomesPlease note that as of v3.1, we have changed the labels we use to classify individuals by chromosomal sex from \"male\" and \"female\" to \"XY\" and \"XX\", respectively. While we have always used the terms \"male\" and \"female\" to refer to an individual's chromosomal sex and not to gender, we recognize that this terminology is overloaded and could cause confusion to users. We also note that the terms \"male\" and \"female,\" when referring to chromosomal sex, can be applied to individuals with sex chromosomal aneuploidies, such as 47,XYY or 45,X. Since we remove samples with sex chromosomal aneuploidies from gnomAD during the QC process, we felt the most straightforward sex classification labels were \"XX\" and \"XY\". These changes are now reflected in both the v3.1 download files and in the browser.We used a combination of X-chromosome homozygosity (F-stat,impute_sex function in Hail) and X and Y chromosomes normalized coverage to assign sex for each gnomAD sample. Note that we used different combinations of metrics (mostly due to their availability) for the different gnomAD datasets (see below for details). The F-stat was computed for each sample using high-confidence QC SNVs (bi-allelic SNVs, LD-pruned to r2< 0.1, with allele frequency > 0.1% and call rate > 99%) on non-pseudoautosomal regions (non-PAR) of the X chromosome. The normalized coverage was computed as the mean coverage on sex chromosomes / mean coverage on chromosome 20. The exact metrics and threshold used for sex assignment were as follows:Genomes (gnomAD v3.1):Genomes (gnomAD v3.0):Exomes (gnomAD v2):Genomes (gnomAD v2):"
+    },
+    {
+        "question": "How many XX/XY individuals have this variant? Can it be assumed that hemizygous variants come only from XY individuals?",
+        "serial": 97,
+        "answer": "Sex for the v4 exomes and genomes was determined using normalized coverage on chromosomes X and Y. Information on allele frequency for males and females for each variant is provided in the population frequencies table on the browser and in the INFO fields of our VCF files (example: AC_male, AC_female, AF_female, AC_fin_male in releases prior to v3.0; AC-XY, AC-XX, AF-XX, AC-fin-XY for release v3.1 and later). If a variant is in a non-PAR region on the X chromosome, it can be assumed that hemizygous variants come from XY samples and homozygous variants come from XX samples."
+    },
+    {
+        "question": "Are there related individuals in gnomAD?",
+        "serial": 98,
+        "answer": "For information on how we handle related individuals please see ourRelatedness filteringhelp text."
+    },
+    {
+        "question": "Why doesn't the amino acid position and consequence on the gene page match what I expect for my transcript and how does gnomAD choose which transcript to use for annotating variants?",
+        "serial": 99,
+        "answer": "The gene page summarizes the most severe functional consequence and protein-level change regardless of the transcript. gnomAD v4 uses the MANE Select transcript as the primary transcript for annotating HGVS nomenclature/consequence. MANE stands for Matched Annotation from NCBI and EMBL-EBI and MANE Select identifies one high-quality representative transcript per protein-coding gene that is well-supported by experimental data and represents the biology of the gene. More background on the MANE project can be foundhere. If no MANE Select transcript exists, the Ensembl canonical transcript is selected. A \"†\" denotes a consequence that is for a non-MANE Select transcript (or non-canonical transcript if no MANE Select exists). On the gene page, you can select which transcript you would like to view. The MANE Select transcript (or canonical if no MANE Select exists) is marked by \"*\". Please note that v2 still uses the canonical transcript because MANE Select transcripts are derived from GRCh38. For information on the VEP and GENCODE annotation versions used please see ourannotation section. Please note, the browser represents transcript versions used at the time of release, which may differ from more recent versions selected by the MANE Select project. Please check the version number listed by the \"MANE Select transcript\" attribute at the top of the gene summary page and check if it is the same or different from the version listed in the browser's \"Show Transcript\" list to be warned of possible discrepancies."
+    },
+    {
+        "question": "Why is a transcript shown in the browser not the correct length and/or appears to be annotated incorrectly?",
+        "serial": 100,
+        "answer": "Annotations may have changed depending on the version of GENCODE used (such as changing from a non-coding to a protein-coding gene, or having a different transcript length). For information on the VEP and GENCODE annotation versions used please see ourannotation section"
+    },
+    {
+        "question": "What do the flags on the browser mean?",
+        "serial": 101,
+        "answer": "Flags that will appear on variant pages:Flags that will appear in the variant table on gene/region pages:"
+    },
+    {
+        "question": "Why is this variant linked to the wrong dbSNP rsID?",
+        "serial": 114,
+        "answer": "First, we do not continuously update the dbSNP rsIDs displayed in the browser, so there will be some differences between the databases and dbSNP depending on versions being used. The dbSNP version used are:Several other classes of problems relate to fundamental issues with dbSNP such as the fact that dbSNP IDs define a locus, not a variant, and therefore multiple variants map to the same dbSNP ID. We generally suggest not using these identifiers at all; if a user is interested in a particular variant we encourage searching for it by chromosome, position, and allele rather than rsID."
+    },
+    {
+        "question": "I can find my variant of interest by searching for the particular variant, but why doesn't it show up in the variant table when I type the gene into the search bar?",
+        "serial": 120,
+        "answer": "A gene search in the new browser will return variants in the CDS regions of the gene or within 75 base pairs of a CDS region. This behavior means that not all intronic or UTR variants will appear when doing a gene search or downloading the CSV tables, leading to fewer variants being displayed on the browser than what is present in the downloadable VCFs (which will contain all variants). You can also do a region search (example:https://gnomad.broadinstitute.org/region/1-55510000-55512000) to bring up intronic variants. We are working on an option to include UTR variants in the results."
+    },
+    {
+        "question": "Why are some variants depleted for homozygotes/out of Hardy-Weinberg Equilibrium (HWE)?",
+        "serial": 121,
+        "answer": "Prior to v3.1, a number of genotypes with a high proportion of alternate allele reads (Allele Balance; AB >= 90%) were being called as heterozygous when they may be homozygous. This deflated the number of reported homozygotes, and was especially apparent at common variants and more so for long insertions and deletions. This affected frequency estimates and especially the calculation of Hardy-Weinberg Equilibrium; see ourpreprintfor more details.The issue is now fixed for new gVCFs generated by HaplotypeCaller moving forward. However, for v4.0, the majority of variant calls were already generated using an uncorrected version of HaplotypeCaller. We therefore made an adjustment to heterozygous genotypes with highly skewed allele balance (>0.9) at common variant sites (>0.01 AF), setting these genotypes to homozygous alternate genotypes. This change is reflected in the aggregate allele frequencies, allele numbers, and allele counts displayed on the browser as well as in the genotype data released for the gnomAD HGDP and 1000 Genomes callset."
+    },
+    {
+        "question": "Can I filter out a particular cohort for my analysis?",
+        "serial": 122,
+        "answer": "Unfortunately, for many reasons (including consent and data usage restrictions) we cannot provide the information required for such filtering. In addition, as gnomAD has grown, we have stopped creating subsets and plan to phase out support of past subsets in the browser. To learn more about this decision please read about database selectionhere."
+    },
+    {
+        "question": "How do I query a batch of variants? Do you have an API?",
+        "serial": 123,
+        "answer": "We currently do not have a way to submit batch queries on the browser, but we are actively working on developing a public API for gnomAD. We currently maintain aGraphQLAPI for internal use and groups can contact us if they want permission to use this API until a more robust public solution is launched.You can also obtain information on all variants from the VCFs and Hail Tables available on ourdownloads page."
+    },
+    {
+        "question": "How do I download the data?",
+        "serial": 124,
+        "answer": "Please visit ourdownloads page."
+    },
+    {
+        "question": "How do I access the gnomAD Hail Table frequency annotation?",
+        "serial": 125,
+        "answer": "Please see our gnomAD Hail Tablehelp text"
+    },
+    {
+        "question": "How was coverage calculated?",
+        "serial": 126,
+        "answer": "gnomAD v4.0Coverage was computed using all 730,947 gnomAD v4.0 samples from their gVCFs.The exome gVCFs were produced using a two schemes:The genome gVCFs were produced using a 3-bin blocking scheme:Coverage was computed for all callable bases in the exome and genome, respectively (all non-N bases, minus telomeres and centromeres). The coverage was binned by quality per data type using the thresholds above, and the median coverage value for each of the resulting coverage blocks was used to compute the coverage metrics presented in the browser.Because we calculated coverage from sample gVCFs rather than raw read files, we have updated our coverage track to display thefraction of samples with >20X coverage. Coverage information from gVCFs is not as granular as coverage information from read data due to the reference block structure withingVCFs, which means that the absolute values are not as informative as the proportion of samples covered above a certain depth threshold.gnomAD v3.0Coverage was computed using all 71,702 gnomAD v3.0 samples from their GVCFs . The gVCFs were produced using a 3-bin blocking scheme:The coverage was binned by quality using the thresholds above and the median coverage value for each of the resulting coverage blocks was used to compute the coverage metrics presented in the browser.Coverage was computed for all callable bases in the genome (all non-N bases, minus telomeres and centromeres).gnomAD v2Coverage was calculated separately for exomes and genomes on a ~10% subset of the samples using thesamtoolsdepth tool. The base quality threshold was set to 10 for the -q option and the mapping quality threshold set to 20 for the -Q option. It is calculated per base of the respective calling intervals, includes sites with zero depth (-a flag), and is capped at 100x for a given sample and base pair. Mean coverage is then plotted on the browser. The numbers in columns over_1, over_5, over_10, etc of our downloadable coverage files refer to the fraction of samples with a depth of coverage of at least 1 read, 5 reads, 10 reads, etc. for the given chromosome and position."
+    },
+    {
+        "question": "Is my variant missing because it was not called in any of the samples or did the site just lack coverage?",
+        "serial": 146,
+        "answer": "The best way to tell if a variant is missing because of a lack of coverage vs missing because it is actually absent in all gnomAD samples is to check the coverage at that base position. You can obtain coverage files from our downloads page. If you are using the browser, a region search will still display coverage plots for zero-variant sites, which can help distinguish between sites that lack variants and sites that could not be called because of a lack of coverage."
+    },
+    {
+        "question": "Why does a variant show a large drop in AN compared to surrounding variants in gnomAD v2?",
+        "serial": 147,
+        "answer": "Sometimes a large apparent drop in AN can occur because a variant was called in only genome samples. If surrounding variants were called in exomes or both exomes and genomes, the AN values for these variants are higher, making it appear that there is a sudden drop and rise in AN. Although the AN is likely consistently high across the given region for exomes, if we only have explicit variant calls for the genome data, we can only speak to our reference confidence for those samples."
+    },
+    {
+        "question": "What are your calling intervals? What intervals are used for the genomes coding-only files?",
+        "serial": 148,
+        "answer": "The calling intervals for our exomes include the bait-covered regions ±50 bp. For v4, our exome calling regions file includes information about the two sets of calling intervals used for v4 samples: Broad exome calling intervals and UK Biobank exome calling intervals.The calling intervals for our exomes include the bait-covered regions ±50 bp. The following exome calling intervals were used to generate the genome coding-only files in gnomAD v2."
+    },
+    {
+        "question": "How are variants called on the mitochondrial DNA (mtDNA)?",
+        "serial": 152,
+        "answer": "Mitochondrial DNA variants are called using a specialized GATK pipeline that addresses challenges specific to the mtDNA. Homoplasmic and heteroplasmic variants are called using the GATK MuTect2 variant caller in a special \"mitochondrial mode\", with extensive filtering of samples and variants as described in our\"gnomAD v3.1 Mitochondrial DNA Variants\" blog post."
+    },
+    {
+        "question": "Why is the total allele number lower for mtDNA versus nuclear variants?",
+        "serial": 153,
+        "answer": "The gnomAD v3.1 data set contains 76,156 whole genomes, of which 56,434 samples passed mitochondrial-specific filters. Samples were excluded if they showed (i) low mtDNA molecules per cell (as these samples have excess heteroplasmic variants likely due to misalignment of nuclear sequences of mitochondrial origin, NUMTs); or (ii) high mtDNA molecules per cell to exclude cell lines (as these samples have excess numbers of heteroplasmic variants likely due to mutation / selection during cell culture); or (iii) mitochondrial contamination exceeding 2% (problematic for calling heteroplasmic variants). We note that samples with low overall contamination may show high mtDNA contamination, e.g. a blood sample with 1% nuclear contamination could have 10% mtDNA contamination if the blood sample has 100 mtDNA molecules/cell and the contaminating sample is a cell line with 1000 mtDNA molecules/cell. See our\"gnomAD v3.1 Mitochondrial DNA Variants\" blog postfor details."
+    },
+    {
+        "question": "What are NUMTs and why are they problematic?",
+        "serial": 154,
+        "answer": "Nuclear sequences of mitochondrial origin (NUMTs) are derived from pieces of mtDNA that have integrated into the nuclear genome over the course of human evolution. Many ancient NUMTs are part of the reference human genome assembly; however, hundreds of polymorphic NUMTs exist that are present only in some individuals. Reads derived from NUMTs (particularly polymorphic NUMTs) often mis-align to the mtDNA and conversely, reads genuinely arising from the mtDNA genome can mis-align to the NUMTs in the reference genome. NUMTs present problems for calling variants in the mtDNA because reads that mis-align to the mtDNA will often generate false positive calls. For example, in a sample with 30x autosomal coverage and 1500x mtDNA coverage, a homozygous NUMT that mis-aligns to the mtDNA can result in false positive calls at 2% apparent heteroplasmy (30/1530 reads). Other bases in the same NUMT can cause a truly homoplasmic mtDNA allele to be falsely called at 98% heteroplasmy (with the 2% REF alleles deriving from the NUMT mis-alignment). This is one reason why we call all variants 95-100% heteroplasmy as \"homoplasmic or near-homoplasmic\" -- since the REF alleles could be derived from NUMTs or from sequencing errors. NUMTs are a larger problem for samples with few mtDNA molecules/cell, which is why we exclude samples with < 50 mtDNA copies/cell."
+    },
+    {
+        "question": "Why are no variants reported below 10% heteroplasmy?",
+        "serial": 155,
+        "answer": "In gnomAD v3.1 we chose to filter out variants with heteroplasmy below 10%, since low heteroplasmy variants are enriched for sequencing/PCR errors, mis-alignment of NUMTs, and contamination. We anticipate that future releases may include lower heteroplasmy variants as we continue to improve our variant filters and quality control."
+    },
+    {
+        "question": "What are haplogroups?",
+        "serial": 156,
+        "answer": "mtDNA does not recombine and is inherited maternally. mtDNA sequences have historically been grouped together based on sequence similarity into \"haplogroups.\". There are over 5000 haplogroups from diverse populations available in thePhylotreedatabase. Each gnomAD sample is assigned to a specific haplogroup viaHaplogrep."
+    },
+    {
+        "question": "What is a haplogroup-defining variant?",
+        "serial": 157,
+        "answer": "Variants that are homoplasmic in any of the ~5000 haplogroups in thePhylotreedatabase are termed \"haplogroup-defining\"."
+    },
+    {
+        "question": "What are haplogroup-specific frequencies?",
+        "serial": 158,
+        "answer": "For each variant, we report the overall population frequency across all gnomAD samples as well as frequencies within all individuals of a given haplogroup (top-level haplogroups only, nomenclature is per van Oven et al Human Mutation 2009). We note more specific haplogroups cannot be reported due to data use restrictions. Variants are displayed relative to the GRCh38 reference genome, which contains the rCRS mitochondrial sequence which belongs to haplogroup H2a2a1 (within the top-level haplogroup H)."
+    },
+    {
+        "question": "What nuclear ancestral populations are represented?",
+        "serial": 159,
+        "answer": "We report allele frequencies by mitochondrial haplogroup as well as byinferred nuclear ancestry."
+    },
+    {
+        "question": "What is the distribution of haplogroups in gnomAD v3.1?",
+        "serial": 160,
+        "answer": "N lineages (\"Eurasian\")L lineages (\"African\")M lineages (\"Asian\")",
+        "Table": [
+            [
+                "Haplogroup",
+                "Number of samples",
+                "Percent of total"
+            ],
+            [
+                "H",
+                "14784",
+                "26%"
+            ],
+            [
+                "U",
+                "6037",
+                "11%"
+            ],
+            [
+                "J",
+                "3144",
+                "6%"
+            ],
+            [
+                "T",
+                "3080",
+                "5%"
+            ],
+            [
+                "K",
+                "2732",
+                "5%"
+            ],
+            [
+                "A",
+                "2680",
+                "5%"
+            ],
+            [
+                "B",
+                "1537",
+                "3%"
+            ],
+            [
+                "V",
+                "1234",
+                "2%"
+            ],
+            [
+                "I",
+                "934",
+                "2%"
+            ],
+            [
+                "W",
+                "819",
+                "1%"
+            ],
+            [
+                "HV",
+                "701",
+                "1%"
+            ],
+            [
+                "X",
+                "546",
+                "1%"
+            ],
+            [
+                "R",
+                "393",
+                "1%"
+            ],
+            [
+                "N",
+                "366",
+                "1%"
+            ],
+            [
+                "F",
+                "282",
+                "0%"
+            ],
+            [
+                "Y",
+                "12",
+                "0%"
+            ],
+            [
+                "P",
+                "7",
+                "0%"
+            ],
+            [
+                "S",
+                "0",
+                "0%"
+            ],
+            [
+                "O",
+                "0",
+                "0%"
+            ],
+            [
+                "All N lineages",
+                "39288",
+                "70%"
+            ],
+            [
+                "Haplogroup",
+                "Number of samples",
+                "Percent of total"
+            ],
+            [
+                "L3",
+                "5672",
+                "10%"
+            ],
+            [
+                "L2",
+                "4724",
+                "8%"
+            ],
+            [
+                "L1",
+                "2977",
+                "5%"
+            ],
+            [
+                "L0",
+                "663",
+                "1%"
+            ],
+            [
+                "L4",
+                "126",
+                "0%"
+            ],
+            [
+                "L5",
+                "1",
+                "0%"
+            ],
+            [
+                "L6",
+                "0",
+                "0%"
+            ],
+            [
+                "All L lineages",
+                "14163",
+                "25%"
+            ],
+            [
+                "Haplogroup",
+                "Number of samples",
+                "Percent of total"
+            ],
+            [
+                "M",
+                "1298",
+                "2%"
+            ],
+            [
+                "C",
+                "868",
+                "2%"
+            ],
+            [
+                "D",
+                "603",
+                "1%"
+            ],
+            [
+                "G",
+                "91",
+                "0%"
+            ],
+            [
+                "Z",
+                "89",
+                "0%"
+            ],
+            [
+                "E",
+                "34",
+                "0%"
+            ],
+            [
+                "Q",
+                "0",
+                "0%"
+            ],
+            [
+                "All M lineages",
+                "2983",
+                "5%"
+            ]
+        ]
+    },
+    {
+        "question": "How many samples are in each mtDNA haplogroup, for each nuclear ancestry population?",
+        "serial": 161,
+        "answer": "",
+        "Table": [
+            [
+                "Haplogroup",
+                "Population",
+                "Number of Samples"
+            ],
+            [
+                "A",
+                "African/African American",
+                "94"
+            ],
+            [
+                "A",
+                "Latino/Admixed American",
+                "2380"
+            ],
+            [
+                "A",
+                "East Asian",
+                "74"
+            ],
+            [
+                "A",
+                "European (non-Finnish)",
+                "43"
+            ],
+            [
+                "A",
+                "Other",
+                "84"
+            ],
+            [
+                "A",
+                "South Asian",
+                "5"
+            ],
+            [
+                "B",
+                "African/African American",
+                "95"
+            ],
+            [
+                "B",
+                "Latino/Admixed American",
+                "1178"
+            ],
+            [
+                "B",
+                "East Asian",
+                "208"
+            ],
+            [
+                "B",
+                "European (non-Finnish)",
+                "22"
+            ],
+            [
+                "B",
+                "Other",
+                "32"
+            ],
+            [
+                "B",
+                "South Asian",
+                "2"
+            ],
+            [
+                "C",
+                "African/African American",
+                "53"
+            ],
+            [
+                "C",
+                "Latino/Admixed American",
+                "687"
+            ],
+            [
+                "C",
+                "East Asian",
+                "47"
+            ],
+            [
+                "C",
+                "European (non-Finnish)",
+                "37"
+            ],
+            [
+                "C",
+                "Other",
+                "39"
+            ],
+            [
+                "C",
+                "South Asian",
+                "5"
+            ],
+            [
+                "D",
+                "African/African American",
+                "37"
+            ],
+            [
+                "D",
+                "Latino/Admixed American",
+                "182"
+            ],
+            [
+                "D",
+                "East Asian",
+                "309"
+            ],
+            [
+                "D",
+                "European (Finnish)",
+                "12"
+            ],
+            [
+                "D",
+                "European (non-Finnish)",
+                "29"
+            ],
+            [
+                "D",
+                "Other",
+                "12"
+            ],
+            [
+                "D",
+                "South Asian",
+                "22"
+            ],
+            [
+                "E",
+                "African/African American",
+                "11"
+            ],
+            [
+                "E",
+                "Latino/Admixed American",
+                "2"
+            ],
+            [
+                "E",
+                "East Asian",
+                "11"
+            ],
+            [
+                "E",
+                "European (non-Finnish)",
+                "4"
+            ],
+            [
+                "E",
+                "Other",
+                "6"
+            ],
+            [
+                "F",
+                "African/African American",
+                "21"
+            ],
+            [
+                "F",
+                "Latino/Admixed American",
+                "3"
+            ],
+            [
+                "F",
+                "East Asian",
+                "229"
+            ],
+            [
+                "F",
+                "European (non-Finnish)",
+                "6"
+            ],
+            [
+                "F",
+                "South Asian",
+                "23"
+            ],
+            [
+                "G",
+                "African/African American",
+                "1"
+            ],
+            [
+                "G",
+                "East Asian",
+                "60"
+            ],
+            [
+                "G",
+                "European (Finnish)",
+                "5"
+            ],
+            [
+                "G",
+                "European (non-Finnish)",
+                "17"
+            ],
+            [
+                "G",
+                "South Asian",
+                "8"
+            ],
+            [
+                "H",
+                "African/African American",
+                "306"
+            ],
+            [
+                "H",
+                "Amish",
+                "164"
+            ],
+            [
+                "H",
+                "Latino/Admixed American",
+                "329"
+            ],
+            [
+                "H",
+                "Ashkenazi Jewish",
+                "357"
+            ],
+            [
+                "H",
+                "East Asian",
+                "1"
+            ],
+            [
+                "H",
+                "European (Finnish)",
+                "2198"
+            ],
+            [
+                "H",
+                "Middle Eastern",
+                "5"
+            ],
+            [
+                "H",
+                "European (non-Finnish)",
+                "11226"
+            ],
+            [
+                "H",
+                "Other",
+                "152"
+            ],
+            [
+                "H",
+                "South Asian",
+                "46"
+            ],
+            [
+                "HV",
+                "African/African American",
+                "9"
+            ],
+            [
+                "HV",
+                "Latino/Admixed American",
+                "10"
+            ],
+            [
+                "HV",
+                "Ashkenazi Jewish",
+                "68"
+            ],
+            [
+                "HV",
+                "European (Finnish)",
+                "18"
+            ],
+            [
+                "HV",
+                "Middle Eastern",
+                "2"
+            ],
+            [
+                "HV",
+                "European (non-Finnish)",
+                "546"
+            ],
+            [
+                "HV",
+                "Other",
+                "6"
+            ],
+            [
+                "HV",
+                "South Asian",
+                "42"
+            ],
+            [
+                "I",
+                "African/African American",
+                "25"
+            ],
+            [
+                "I",
+                "Latino/Admixed American",
+                "5"
+            ],
+            [
+                "I",
+                "Ashkenazi Jewish",
+                "30"
+            ],
+            [
+                "I",
+                "East Asian",
+                "1"
+            ],
+            [
+                "I",
+                "European (Finnish)",
+                "114"
+            ],
+            [
+                "I",
+                "European (non-Finnish)",
+                "743"
+            ],
+            [
+                "I",
+                "Other",
+                "8"
+            ],
+            [
+                "I",
+                "South Asian",
+                "8"
+            ],
+            [
+                "J",
+                "African/African American",
+                "61"
+            ],
+            [
+                "J",
+                "Latino/Admixed American",
+                "141"
+            ],
+            [
+                "J",
+                "Ashkenazi Jewish",
+                "107"
+            ],
+            [
+                "J",
+                "European (Finnish)",
+                "245"
+            ],
+            [
+                "J",
+                "Middle Eastern",
+                "3"
+            ],
+            [
+                "J",
+                "European (non-Finnish)",
+                "2520"
+            ],
+            [
+                "J",
+                "Other",
+                "41"
+            ],
+            [
+                "J",
+                "South Asian",
+                "26"
+            ],
+            [
+                "K",
+                "African/African American",
+                "52"
+            ],
+            [
+                "K",
+                "Latino/Admixed American",
+                "30"
+            ],
+            [
+                "K",
+                "Ashkenazi Jewish",
+                "460"
+            ],
+            [
+                "K",
+                "European (Finnish)",
+                "194"
+            ],
+            [
+                "K",
+                "Middle Eastern",
+                "1"
+            ],
+            [
+                "K",
+                "European (non-Finnish)",
+                "1952"
+            ],
+            [
+                "K",
+                "Other",
+                "33"
+            ],
+            [
+                "K",
+                "South Asian",
+                "10"
+            ],
+            [
+                "L0",
+                "African/African American",
+                "605"
+            ],
+            [
+                "L0",
+                "Latino/Admixed American",
+                "35"
+            ],
+            [
+                "L0",
+                "European (non-Finnish)",
+                "10"
+            ],
+            [
+                "L0",
+                "Other",
+                "13"
+            ],
+            [
+                "L1",
+                "African/African American",
+                "2760"
+            ],
+            [
+                "L1",
+                "Latino/Admixed American",
+                "149"
+            ],
+            [
+                "L1",
+                "European (Finnish)",
+                "1"
+            ],
+            [
+                "L1",
+                "European (non-Finnish)",
+                "28"
+            ],
+            [
+                "L1",
+                "Other",
+                "38"
+            ],
+            [
+                "L1",
+                "South Asian",
+                "1"
+            ],
+            [
+                "L2",
+                "African/African American",
+                "4404"
+            ],
+            [
+                "L2",
+                "Latino/Admixed American",
+                "160"
+            ],
+            [
+                "L2",
+                "Ashkenazi Jewish",
+                "34"
+            ],
+            [
+                "L2",
+                "East Asian",
+                "1"
+            ],
+            [
+                "L2",
+                "Middle Eastern",
+                "1"
+            ],
+            [
+                "L2",
+                "European (non-Finnish)",
+                "44"
+            ],
+            [
+                "L2",
+                "Other",
+                "78"
+            ],
+            [
+                "L2",
+                "South Asian",
+                "2"
+            ],
+            [
+                "L3",
+                "African/African American",
+                "5282"
+            ],
+            [
+                "L3",
+                "Latino/Admixed American",
+                "242"
+            ],
+            [
+                "L3",
+                "Ashkenazi Jewish",
+                "1"
+            ],
+            [
+                "L3",
+                "East Asian",
+                "1"
+            ],
+            [
+                "L3",
+                "European (non-Finnish)",
+                "39"
+            ],
+            [
+                "L3",
+                "Other",
+                "104"
+            ],
+            [
+                "L3",
+                "South Asian",
+                "3"
+            ],
+            [
+                "L4",
+                "African/African American",
+                "118"
+            ],
+            [
+                "L4",
+                "Latino/Admixed American",
+                "4"
+            ],
+            [
+                "L4",
+                "European (non-Finnish)",
+                "2"
+            ],
+            [
+                "L4",
+                "Other",
+                "2"
+            ],
+            [
+                "L5",
+                "Other",
+                "1"
+            ],
+            [
+                "M",
+                "African/African American",
+                "113"
+            ],
+            [
+                "M",
+                "Latino/Admixed American",
+                "3"
+            ],
+            [
+                "M",
+                "Ashkenazi Jewish",
+                "10"
+            ],
+            [
+                "M",
+                "East Asian",
+                "341"
+            ],
+            [
+                "M",
+                "European (Finnish)",
+                "1"
+            ],
+            [
+                "M",
+                "European (non-Finnish)",
+                "64"
+            ],
+            [
+                "M",
+                "Other",
+                "3"
+            ],
+            [
+                "M",
+                "South Asian",
+                "763"
+            ],
+            [
+                "N",
+                "African/African American",
+                "2"
+            ],
+            [
+                "N",
+                "Latino/Admixed American",
+                "1"
+            ],
+            [
+                "N",
+                "Ashkenazi Jewish",
+                "122"
+            ],
+            [
+                "N",
+                "East Asian",
+                "52"
+            ],
+            [
+                "N",
+                "European (Finnish)",
+                "7"
+            ],
+            [
+                "N",
+                "Middle Eastern",
+                "1"
+            ],
+            [
+                "N",
+                "European (non-Finnish)",
+                "161"
+            ],
+            [
+                "N",
+                "Other",
+                "9"
+            ],
+            [
+                "N",
+                "South Asian",
+                "11"
+            ],
+            [
+                "P",
+                "East Asian",
+                "5"
+            ],
+            [
+                "P",
+                "European (non-Finnish)",
+                "2"
+            ],
+            [
+                "R",
+                "African/African American",
+                "5"
+            ],
+            [
+                "R",
+                "Latino/Admixed American",
+                "4"
+            ],
+            [
+                "R",
+                "Ashkenazi Jewish",
+                "28"
+            ],
+            [
+                "R",
+                "East Asian",
+                "103"
+            ],
+            [
+                "R",
+                "European (Finnish)",
+                "29"
+            ],
+            [
+                "R",
+                "Middle Eastern",
+                "2"
+            ],
+            [
+                "R",
+                "European (non-Finnish)",
+                "69"
+            ],
+            [
+                "R",
+                "Other",
+                "4"
+            ],
+            [
+                "R",
+                "South Asian",
+                "149"
+            ],
+            [
+                "T",
+                "African/African American",
+                "66"
+            ],
+            [
+                "T",
+                "Amish",
+                "13"
+            ],
+            [
+                "T",
+                "Latino/Admixed American",
+                "34"
+            ],
+            [
+                "T",
+                "Ashkenazi Jewish",
+                "63"
+            ],
+            [
+                "T",
+                "European (Finnish)",
+                "239"
+            ],
+            [
+                "T",
+                "European (non-Finnish)",
+                "2599"
+            ],
+            [
+                "T",
+                "Other",
+                "34"
+            ],
+            [
+                "T",
+                "South Asian",
+                "32"
+            ],
+            [
+                "U",
+                "African/African American",
+                "185"
+            ],
+            [
+                "U",
+                "Amish",
+                "190"
+            ],
+            [
+                "U",
+                "Latino/Admixed American",
+                "101"
+            ],
+            [
+                "U",
+                "Ashkenazi Jewish",
+                "56"
+            ],
+            [
+                "U",
+                "European (Finnish)",
+                "1238"
+            ],
+            [
+                "U",
+                "Middle Eastern",
+                "3"
+            ],
+            [
+                "U",
+                "European (non-Finnish)",
+                "3892"
+            ],
+            [
+                "U",
+                "Other",
+                "90"
+            ],
+            [
+                "U",
+                "South Asian",
+                "282"
+            ],
+            [
+                "V",
+                "African/African American",
+                "16"
+            ],
+            [
+                "V",
+                "Latino/Admixed American",
+                "14"
+            ],
+            [
+                "V",
+                "Ashkenazi Jewish",
+                "47"
+            ],
+            [
+                "V",
+                "European (Finnish)",
+                "273"
+            ],
+            [
+                "V",
+                "European (non-Finnish)",
+                "869"
+            ],
+            [
+                "V",
+                "Other",
+                "15"
+            ],
+            [
+                "W",
+                "African/African American",
+                "15"
+            ],
+            [
+                "W",
+                "Latino/Admixed American",
+                "6"
+            ],
+            [
+                "W",
+                "Ashkenazi Jewish",
+                "23"
+            ],
+            [
+                "W",
+                "European (Finnish)",
+                "214"
+            ],
+            [
+                "W",
+                "Middle Eastern",
+                "1"
+            ],
+            [
+                "W",
+                "European (non-Finnish)",
+                "508"
+            ],
+            [
+                "W",
+                "Other",
+                "14"
+            ],
+            [
+                "W",
+                "South Asian",
+                "38"
+            ],
+            [
+                "X",
+                "African/African American",
+                "11"
+            ],
+            [
+                "X",
+                "Amish",
+                "25"
+            ],
+            [
+                "X",
+                "Latino/Admixed American",
+                "18"
+            ],
+            [
+                "X",
+                "Ashkenazi Jewish",
+                "9"
+            ],
+            [
+                "X",
+                "European (Finnish)",
+                "59"
+            ],
+            [
+                "X",
+                "Middle Eastern",
+                "1"
+            ],
+            [
+                "X",
+                "European (non-Finnish)",
+                "405"
+            ],
+            [
+                "X",
+                "Other",
+                "7"
+            ],
+            [
+                "X",
+                "South Asian",
+                "11"
+            ],
+            [
+                "Y",
+                "East Asian",
+                "11"
+            ],
+            [
+                "Y",
+                "European (non-Finnish)",
+                "1"
+            ],
+            [
+                "Z",
+                "East Asian",
+                "28"
+            ],
+            [
+                "Z",
+                "European (Finnish)",
+                "45"
+            ],
+            [
+                "Z",
+                "European (non-Finnish)",
+                "11"
+            ],
+            [
+                "Z",
+                "Other",
+                "1"
+            ],
+            [
+                "Z",
+                "South Asian",
+                "4"
+            ],
+            [
+                "Haplogroup: All",
+                "Ancestry: All",
+                "Samples: 56434"
+            ]
+        ]
+    },
+    {
+        "question": "What are the meanings of the mitochondrial-specific filters and flags?",
+        "serial": 162,
+        "answer": "Mitochondrial variants were subjected to mitochondrial-specific filters and flags. Filters are used to exclude specific genotypes, variants, or sites from population counts. Genotype filters exclude alleles in individual samples (e.g. poor base quality or low heteroplasmy in that sample), whereas variant filters exclude the allele in all individuals for a given variant, and site filters exclude all variants at a given position (eg all indel and SNP variants overlapping chrM:310). Flags are warnings applied to PASS variants to aid interpretation. The number of filtered genotypes is reported in the excluded allele count (\"excluded_AC\"), and a histogram is available on variant pages to view the counts of specific filters across different heteroplasmy levels, but these genotypes are not used for allele count and allele frequency calculations.artifact_prone_site (site-level filter): This is one of 6 specific mtDNA positions (301, 302, 310, 316, 3107, 16182) where sequence context makes it difficult to distinguish true variants from technical artifacts, and therefore all variants overlapping these sites are filtered out. The homopolymer tracts at location chrM:300-317 (AAACCCCCCCTCCCCCGC) cause Illumina sequencing errors in all samples and cause (i) a large coverage dip in this region, (ii) reads with many apparent indels near position chrM:310T, and (iii) apparent substitutions of chrM:301A→C, chrM:302A→C, chrM:310T→C, and chrM:316G→C. Similarly, homopolymer tracts at location chrM:16180-16193 (AAAACCCCCTCCCC) cause errors and apparent indels at position chrM:16182. The reference genome contains \"N\" at position chrM:3107, which causes misalignment of many reads.indel_stack (variant filter): Similar to artifact-prone sites, certain indels create a homopolymer tract that causes a drop in coverage and technical sequencing artifacts in multiple individuals. For example, an individual with an insertion at position chrM:5892 would typically show multiple alternate alleles (e.g., REF=T, ALT= TC, TCC, TCCC, TCCCCC, TCCCCC, TCCCCCCCC), which represents a multi-allelic call in this sample. Indels that are only present within multi-allelic calls across all samples in the callset are filtered out using this flag. For example, of the 182 different indel variants observed at position chrM:5892, 102 are only detected within multi-allelic calls and are filtered out as indel_stack, whereas alternate variants such as chrM:5892T→TC and chrM:5892T→TCC are not always in multi-allelic calls and will pass filters.npg (variant filter): No sample had a pass genotype for the variant (no pass genotype).common_low_heteroplasmy (variant warning flag): This flag is present if the variant is found at an overall frequency of .001 across all samples with a PASS genotype and heteroplasmy level > 0% and < 50% (includes variants < 1% heteroplasmy which are subsequently filtered). This flag indicates that low-heteroplasmy alleles at these variants are likely to be enriched for sequencing errors and NUMT misalignments (which are common across samples), however homoplasmic alleles at these variants will be high quality and can be trusted.base_qual (genotype filter): Median base quality for alternate allele was below minimum (using default of 20 for \"min-median-base-quality\" parameter)heteroplasmy_below_min_het_threshold (genotype filter): Heteroplasmy level was below 10% in this sampleposition (genotype filter): Median distance of variant allele from end of reads was below minimum (using default of 1 for \"min-median-read-position\" parameter)strand_bias (genotype filter): Evidence for alternate allele comes from one read direction onlyweak_evidence (genotype filter): Mutation does not meet likelihood thresholdcontamination (genotype filter): Fails MuTect2 contamination filter based onHaplocheck(does not take into account the freemix value or our internal algorithm for calculating contamination)"
+    },
+    {
+        "question": "Can I download all the mtDNA variants?",
+        "serial": 173,
+        "answer": "Homoplasmic and heteroplasmic counts for all sites can be downloaded in VCF format or a text file summary. Files are listed on thedownloads page."
+    },
+    {
+        "question": "What data were used to develop the variant co-occurrence predictions?",
+        "serial": 174,
+        "answer": "We used the exome sequencing samples from gnomAD v2.1 (n = 125,748; GRCh37) to estimate haplotype frequencies that were then used to statistically infer the phase of a pair of variants in the same gene. At this time, no genome sequencing data are included in the analyses and our predictions are based on the GRCh37 genome build."
+    },
+    {
+        "question": "How did you calculate the thresholds used to determine if a pair of variants is predicted to be in cis vs in trans?",
+        "serial": 175,
+        "answer": "For each pair of variants, we generated pairwise genotype counts using the gnomAD v2.1 data and then applied anExpectation-Maximization (EM) algorithmto estimate the haplotype frequencies. These haplotype frequencies were then used to determine the probability of the two variants being intrans(on different haplotypes; Ptrans), which was defined as the probability of inheriting each of the haplotypes that contain only one of the two variant alleles.Using 4,775 trios that were jointly processed with gnomAD, we identified 339,857 unique variant pairs and determined their phase using parental transmission (phasing-by-transmission). We calculated Ptransvalues for all variant pairs found in the trios using gnomAD samples from the same genetic ancestry group. We binned variant pairs based on their Ptransvalues and calculated the proportion of trio variant pairs that were incisor intrans. We defined Ptransthreshold for being in cis (or trans) based on the maximum Ptrans value at which ≥90% of the variant pairs in that bin were incis(ortrans) based on the gold standard phasing-by-transmission data. This resulted in Ptransvalues of ≤ 0.02 and ≥ 0.55 as the threshold for variants incisandtrans, respectively.For more information, see ourpublication."
+    },
+    {
+        "question": "What does it mean when the likely co‑occurrence pattern is listed as “Uncertain”?",
+        "serial": 176,
+        "answer": "When the probability of a pair of variants being intrans(Ptrans) falls in between the thresholds we set for variant pairs incis(Ptrans≤ 0.02) or intrans(Ptrans≥ 0.55), we cannot confidently infer the phase. We therefore refer to the likely co-occurrence pattern as “uncertain” in these cases."
+    },
+    {
+        "question": "When should I use the population-specific predictions vs the prediction from the full dataset?",
+        "serial": 177,
+        "answer": "We suggest using the population-specific estimates, when available and when ancestry information for the sample to be phased is known, as first-line followed by the phasing estimate from the full dataset."
+    },
+    {
+        "question": "Why are two variants predicted as occurring on the same haplotype when the majority of the samples in gnomAD only have a single variant?",
+        "serial": 178,
+        "answer": "The variant co-occurrence tool assesses the probability of whether we would observe the given allele counts for each rare variant if the two rare variants were present on different haplotypes. For the two variants in question, the probability that the two variants are on different haplotypes is very low (<1%), which is why the co-occurrence prediction is that these variants occur on the same haplotype.Note that due to the rare allele frequency of these two variants, it is more likely to see samples that fall within the \"Samples consistent with variants appearing in isolation or on different haplotypes\" column – there aren't that many samples that have both rare variants. Note also that probability values for our variant co-occurrence tool are not well calibrated, particularly where both variants are extremely rare. Please see ourpaperorblog post on variant co-occurrencefor accuracy estimates and additional detail.In samples with both rare variants, it is only possible to count the sample in the \"Samples consistent with variants appearing on the same haplotype\" column when at least one of the variants is homozygous in the sample – this is indicated in the \"Genotype Counts\" table below the overview table (genotypes: aaBb, Aabb, and aabb). All samples that are heterozygous for both variants (genotype: AaBb) fall into \"Samples consistent with either co-occurrence pattern\" as phase is unknown from the sequencing data (the variants could either be AB|ab or Ab|aB in configuration) -- the EM algorithm is then used to obtain estimated haplotype frequencies given the missing values for the double heterozygote.Finally, the likelihood that the variants are on different haplotypes is calculated from the estimated haplotype counts as: (Ab×aB)/((AB×ab)+(Ab×aB)) -- this simply represents the probability of inheriting both the Ab and aB haplotypes, which in this case is very low (<1%)."
+    },
+    {
+        "question": "Why is a pair of variants missing from the downloadable table?",
+        "serial": 179,
+        "answer": "We calculated inferred phasing data for all pairs of variants within a gene where both variants have a global allele frequency in gnomAD v2.1.1 exomes <5% and are either coding, flanking intronic (from position -1 to -3 in acceptor sites, and +1 to +8 in donor sites), or in the 5’/3’ UTRs.In the downloadable file, we provide inferred phasing data for 20,921,100 pairs of variants that were seen at least once in the same individual in gnomAD. Therefore, if a pair of qualifying variants cannot be found in this file, it means they were never seen in the same individual and the phase is predicted to be trans."
+    }
+]

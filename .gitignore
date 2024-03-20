@@ -1,0 +1,18 @@
+#ignore all _pycache_ directories
+__pycache__/
+
+#ignore all .pyc files
+*.pyc
+
+#ignore all vector_store files
+vectorstores/
+
+
+#ignore .venv directory
+.venv/
+
+
+#ignore all trial folder files
+trial/
+.files/
+License

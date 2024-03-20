@@ -91,10 +91,6 @@ def unique_dicts_by_key(dict_list, unique_key):
     return unique_dicts
 
 
-
-
-                        
-   
 ans = get_QA()
 
 filename = 'qa.json'

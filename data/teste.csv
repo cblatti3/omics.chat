@@ -1,0 +1,23 @@
+Link,ID,pmcID,Title,URL,cite,cite_pmc,cite_title,surroundtext
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10811556,38270950,PMC10811556,Clonal Hematopoiesis and Incident Heart Failure With Preserved Ejection Fraction.,http://dx.doi.org/10.1001/jamanetworkopen.2023.53244,32461654,PMC7334197,"The mutational constraint spectrum quantified from variation in 141,456 humans.",excluded using an external reference of germline variants
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10556087,37798313,PMC10556087,"Functional mutation, splice, distribution, and divergence analysis of impactful genes associated with heart failure and other cardiovascular diseases.",http://dx.doi.org/10.1038/s41598-023-44127-1,32461654,PMC7334197,"The mutational constraint spectrum quantified from variation in 141,456 humans.",better contextualize these mutation’s effects on disease
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10371173,37503172,PMC10371173,Common- and rare-variant genetic architecture of heart failure across the allele frequency spectrum.,pii: 2023.07.16.23292724. http://dx.doi.org/10.1101/2023.07.16.23292724,32461654,PMC7334197,"The mutational constraint spectrum quantified from variation in 141,456 humans.",we further restricted analysis to the subset of variants passing all LOFTEE filters to produce a filtered high quality set of pLoF variants
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9302582,35395180,PMC9302582,Uncompensated mitochondrial oxidative stress underlies heart failure in an iPSC-derived model of congenital heart disease.,http://dx.doi.org/10.1016/j.stem.2022.03.003,32461654,PMC7334197,"The mutational constraint spectrum quantified from variation in 141,456 humans.",Variants with minor allele frequency (MAF) less than 0.01 in GnomAD 
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10773142,38185631,PMC10773142,Single-cell RNA sequencing in donor and end-stage heart failure patients identifies NLRP3 as a therapeutic target for arrhythmogenic right ventricular cardiomyopathy.,http://dx.doi.org/10.1186/s12916-023-03232-8,27535533,PMC5018207,"Analysis of protein-coding genetic variation in 60,706 humans.",and gnomAD data (gnomAD_ALL and gnomAD_EAS)
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8611834,34819141,PMC8611834,Overlap phenotypes of the left ventricular noncompaction and hypertrophic cardiomyopathy with complex arrhythmias and heart failure induced by the novel truncated DSC2 mutation.,http://dx.doi.org/10.1186/s13023-021-02112-9,27535533,PMC5018207,"Analysis of protein-coding genetic variation in 60,706 humans.", minor allele frequency (MAF) in relevant population databases is ≤ 0.1%
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6523007,30851055,PMC6523007,Titin-truncating variants are associated with heart failure events in patients with left ventricular non-compaction cardiomyopathy.,http://dx.doi.org/10.1002/clc.23172,27535533,PMC5018207,"Analysis of protein-coding genetic variation in 60,706 humans.",Variants were excluded if their minor allele frequency was ≥0.05% among East Asians in the Genome Aggregation Database
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6332775,30656044,PMC6332775,A 14-year-old in heart failure with multiple cardiomyopathy variants illustrates a role for signal-to-noise analysis in gene test re-interpretation.,http://dx.doi.org/10.1002/ccr3.1920,27535533,PMC5018207,"Analysis of protein-coding genetic variation in 60,706 humans.",Minor allele frequency was evaluated using the Genome Aggregate Database (GnomAD)
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5322656,28228157,PMC5322656,Genetics and genomics of dilated cardiomyopathy and systolic heart failure.,http://dx.doi.org/10.1186/s13073-017-0410-8,27535533,PMC5018207,"Analysis of protein-coding genetic variation in 60,706 humans.",as those included in the Exome Aggregation Consortium (ExAC) data-set
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10581410,37593875,PMC10581410,Risks of Ventricular Arrhythmia and Heart Failure in Carriers of RBM20 Variants.,http://dx.doi.org/10.1161/CIRCGEN.123.004059,34859531,PMC9160216,Variant interpretation using population databases: Lessons from gnomAD.,
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10607512,37894902,PMC10607512,The Role of Genetics in the Management of Heart Failure Patients.,http://dx.doi.org/10.3390/ijms242015221,32461616,PMC7253449,"Characterising the loss-of-function impact of 5' untranslated region variants in 15,708 individuals.",It is commonly employed as the primary diagnostic test for probands
